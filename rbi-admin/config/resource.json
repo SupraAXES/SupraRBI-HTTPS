@@ -1,0 +1,13 @@
+[
+    {
+        "name": "SupraAXES",
+        "url": "https://www.supraaxes.com/",
+        "icon": "supraaxes.png",
+        "group": "IT",
+        "policy": "supra",
+        "autofill":{
+            "username": "1234",
+            "password": "1234"
+        }
+    }
+]

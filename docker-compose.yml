@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+    rbi-portal:
+        image: supraaxes/suprarbi-portal
+        volumes:
+            - /opt/supra/rbi/logs:/opt/supra/logs
+            - /opt/supra/rbi/cert:/opt/supra/cert
+            - /opt/supra/rbi/icons:/opt/supra/icons
+            - /opt/supra/rbi/data/tmp:/opt/supra/data/tmp
+        depends_on:
+            - rbi-admin
+        ports:
+            - 443:443  
+    rbi-admin:
+        image: supraaxes/suprarbi-admin
+        volumes:
+            - /opt/supra/rbi/conf:/opt/supra/config
+            - /opt/supra/rbi/logs:/opt/supra/logs
+            - /opt/supra/rbi/data/tmp:/opt/supra/data/tmp     
+    resc-agent:
+        image: supraaxes/supra-guacd
+        networks:
+            - default
+            - supra_projectors
+    vnc-rbi:
+        image: supraaxes/suprarbi-vnc
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        environment:
+            - SUPRA_PROJECTOR_NETWORK=supra-projectors
+            - SUPRA_PROJECTOR_IMAGE=supraaxes/projector-supra-web
+        networks:
+            - supra_projectors          
+networks:
+    default:
+      name: suprarbi_network
+    supra_projectors:
+      name: supra_projectors

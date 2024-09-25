@@ -1,0 +1,11 @@
+{
+  "rule": {
+    "keyboard": 1,
+    "mouse": 1,
+    "download": 0,
+    "upload": 0,
+    "copy": 0,
+    "paste": 0,
+    "idleTime": 15
+  }
+}

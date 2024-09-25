@@ -1,0 +1,72 @@
+/c:
+    get:
+      summary: Request for RBI session
+      description: Returns for a RBI session 
+      operationId: getrbisession
+      parameters:
+        - name: url
+          in: query 
+          description: target url to access, urlencoded
+          required: false
+          schema:
+            type: string
+        - name: Raw-URL
+          in: header
+          description: target url to access. Must have if url is not provided, override "url"
+          required: false
+          schema:
+            type: string
+        - name: token
+          in: query 
+          description: service token for request validation
+          required: false
+          schema:
+            type: string
+        - name: Service-Token
+          in: header 
+          description: service token for request validation. Must have if token is not provided, override "token"
+          required: false
+          schema:
+            type: string
+        - name: policy
+          in: query 
+          description: policy to enforce for rbi session
+          required: false
+          schema:
+            type: string
+        - name: User-Policy
+          in: header
+          description: policy to enforce for rbi session. Must have if policy is not provided, override "policy"
+          required: false
+          schema:
+            type: string
+        - name: autofill
+          in: query 
+          description: json string for autofill key-value pairs
+          required: false
+          schema:
+            type: string
+        - name: Autofill
+          in: header
+          description: json string for autofill key-value pairs, override "autofill"
+          required: false
+          schema:
+            type: string
+        - name: User-Agent
+          in: header
+          description: user agent of the end user who will use the requested rbi session. If the user-agent string from the end user is different from value of this parameter, the end user will not be able to use the requested rbi session. If not provided, any user agent is allowed
+          required: false
+          schema:
+            type: string
+      responses:
+        '302':
+          description: redirect user to a rbi session
+          headers:
+            Location:
+              description: url for the rbi session, usually in the format of "https://rbi-server-address/access/c/connect/?id=xxxxx"
+              schema:
+                type: string
+        '400':
+          description: Invalid parameters
+        '500':
+          description: Failed to start a rbi session
