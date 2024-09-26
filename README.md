@@ -8,6 +8,11 @@ sudo docker compose up -d
 ### Web Portal
 SupraRBI-HTTPS Web Portal lists all resources provided by the administration, organized by groups. When a user accesses SupraRBI-HTTPS Web Portal with a browser, each time she clicks the icon of a resource, a corresponding RBI session will be presented in a new tab.
 
+<div style="display: flex;">
+    <img src="img/sources.png" alt="Resources" style="height: 200px; margin: 5px;" />
+    <img src="img/session.png" alt="Session" style="height: 200px; margin: 5px;" />
+</div>
+
 ### API
 Each time the SupraRBI-HTTPS server gets a valid RBI request, it will respond with Status Code 302 and a URL for the corresponding RBI session. End users can access the RBI seesion from a browser with the URL. 
 

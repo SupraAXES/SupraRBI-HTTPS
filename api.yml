@@ -63,7 +63,7 @@
           description: redirect user to a rbi session
           headers:
             Location:
-              description: url for the rbi session, usually in the format of "https://rbi-server-address/access/c/connect/?id=xxxxx"
+              description: url for the rbi session, usually in the format of "https://rbi-server-address/connect?id=xxxxx"
               schema:
                 type: string
         '400':
