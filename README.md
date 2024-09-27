@@ -9,7 +9,7 @@ sudo docker compose up -d
 SupraRBI-HTTPS Web Portal lists all resources provided by the administration, organized by groups. When a user accesses SupraRBI-HTTPS Web Portal with a browser, each time she clicks the icon of a resource, a corresponding RBI session will be presented in a new tab.
 
 <div style="display: flex;">
-    <img src="img/sources.png" alt="Resources" style="height: 200px; margin: 5px;" />
+    <img src="img/resources.png" alt="Resources" style="height: 200px; margin: 5px;" />
     <img src="img/session.png" alt="Session" style="height: 200px; margin: 5px;" />
 </div>
 
@@ -26,7 +26,7 @@ SupraRBI-HTTPS is built with Service-Oriented Architecture (SOA) on docker, with
 2. **Logs, /opt/supra/rbi/logs/**: log files <br>
 3. **Certificate, /opt/supra/rbi/cert**: certificate(tls.cert) and key(tls.key) for HTTPS. If not provided, a self-signed certificate and key will be automatically generated.<br>
 4. **Configs, /opt/supra/rbi/conf/**: configuration files<br>
-    - **Token**, tokens.json: list of strings as valid tokens. Each API request for a RBI seesion MUST have a valid token.<br>
+    - **Token**, token.json: list of strings as valid tokens. Each API request for a RBI seesion MUST have a valid token.<br>
     - **Policy**, policy/: file name as policy name (*.json), with settings inside. Each resource in resource.json or each API request for a RBI seesion SHOULD specify the name of a policy to be enforced, and if not specified, the default policy defined by default.json will be used.<br>
     - **Resource**, resource.json: list of resources in Web Portal.<br>
     - **license**, license.json: license file for [projector-supra-web](https://github.com/SupraAXES/projector-supra-web) when used.
