@@ -19,7 +19,7 @@ launch_engine() {
   echo "Engine Java launched with options: $JAVA_RUNNING_OPTIONS"
 }
 
-if [ ! -f /opt/supra/config/token.json ] || [ ! "$(ls -A /opt/supra/config/policies)" ]; then
+if [ ! -f /opt/supra/config/token.json ] || [ ! "$(ls -A /opt/supra/config/policy)" ]; then
   echo "Copying default config files"
   cp -r /opt/supra/config.default/* /opt/supra/config/
 fi

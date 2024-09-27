@@ -28,7 +28,7 @@ services:
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         environment:
-            - SUPRA_PROJECTOR_NETWORK=supra-projectors
+            - SUPRA_PROJECTOR_NETWORK=supra_projectors
             - SUPRA_PROJECTOR_IMAGE=supraaxes/projector-supra-web
         networks:
             - supra_projectors          

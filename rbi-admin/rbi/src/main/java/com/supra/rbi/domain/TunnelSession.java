@@ -96,7 +96,7 @@ public class TunnelSession {
             query.put("password", this.password);
         }
 
-        query.put("audio-servername", "norm-" + session.getUuid());
+        query.put("audio-servername", "rbi-norm-" + session.getUuid());
 
         ResourceRule rule = session.getRule();
         if (rule != null) {
